@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_messages",
+  "info": {
+    "singularName": "user-message",
+    "pluralName": "user-messages",
+    "displayName": "User: Messages"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "message": {
+      "type": "text"
+    },
+    "isSpam": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

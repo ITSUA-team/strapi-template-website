@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_shared_redirects",
+  "info": {
+    "displayName": "Redirect"
+  },
+  "options": {},
+  "attributes": {
+    "to": {
+      "type": "string"
+    },
+    "from": {
+      "type": "string"
+    },
+    "statusCode": {
+      "type": "integer",
+      "max": 550,
+      "min": 200,
+      "default": 301
+    }
+  }
+}

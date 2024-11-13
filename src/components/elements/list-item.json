@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_elements_list_items",
+  "info": {
+    "displayName": "List item"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}

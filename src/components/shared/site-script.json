@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_site_scripts",
+  "info": {
+    "displayName": "Site script"
+  },
+  "options": {},
+  "attributes": {
+    "script": {
+      "type": "text",
+      "required": true
+    },
+    "position": {
+      "type": "enumeration",
+      "enum": [
+        "Before closing head",
+        "After start body",
+        "Before closing body"
+      ],
+      "default": "After start body",
+      "required": true
+    }
+  }
+}
