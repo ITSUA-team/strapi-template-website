@@ -1,4 +1,7 @@
 import type { StrapiApp } from '@strapi/strapi/admin';
+import Logo from "/logo-itsua-white.png";
+import { release } from 'os';
+
 
 export default {
   config: {
@@ -30,6 +33,16 @@ export default {
       // 'zh-Hans',
       // 'zh',
     ],
+    auth : {
+      logo: Logo,
+    },
+    menu: {
+      logo: Logo,
+    },
+    tutorials: false,
+    notifications: {
+      releases: false
+    }
   },
   bootstrap(app: StrapiApp) {
     console.log(app);

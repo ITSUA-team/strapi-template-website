@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "builders",
+  "info": {
+    "singularName": "builder",
+    "pluralName": "builders",
+    "displayName": "Builder"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "BuildAutomatically": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
