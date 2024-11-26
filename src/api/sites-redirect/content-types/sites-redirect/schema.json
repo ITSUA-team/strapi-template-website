@@ -4,7 +4,8 @@
   "info": {
     "singularName": "sites-redirect",
     "pluralName": "sites-redirects",
-    "displayName": "Sites: Redirects"
+    "displayName": "Sites: Redirects",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true

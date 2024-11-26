@@ -4,7 +4,8 @@
   "info": {
     "singularName": "sites-page",
     "pluralName": "sites-pages",
-    "displayName": "Sites:Pages"
+    "displayName": "Sites: Pages",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
