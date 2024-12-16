@@ -1,6 +1,4 @@
-function buildSiteWithContent() {
-  console.log("🚀 ~ buildSiteWithContent ~ Building site with content");
-}
+import axios from "axios";
 
 export default {
   async afterUpdate(event) {
@@ -8,6 +6,8 @@ export default {
     const { data } = event.params;
     const BUILDER_FIELD = "BuildAutomatically";
     const builderState = data[BUILDER_FIELD];
+    const buildUrl = process.env.FRONTEND_BUILD_URL;
+    const buildToken = process.env.FRONTEND_BUILD_SECRET;
 
     console.log("🚀 : afterUpdate ~ data", data)
 
@@ -21,7 +21,13 @@ export default {
       },
     });
     if (builderState) {
-      buildSiteWithContent();
+      await axios.post(buildUrl, {
+        builder: true
+      }, {
+      headers: {
+        'Authorization': `Bearer ${buildToken}`
+      }
+    });
     }
   },
 };
