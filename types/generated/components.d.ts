@@ -1,5 +1,22 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface ElementsFaqItem extends Struct.ComponentSchema {
+  collectionName: 'components_elements_faq_items';
+  info: {
+    displayName: 'FAQ item';
+  };
+  attributes: {
+    answer: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'default';
+        }
+      >;
+    question: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface ElementsFeature extends Struct.ComponentSchema {
   collectionName: 'components_elements_features';
   info: {
@@ -203,6 +220,23 @@ export interface LinksLink extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsBodyWithTitle extends Struct.ComponentSchema {
+  collectionName: 'components_sections_body_with_titles';
+  info: {
+    displayName: 'Body with title';
+  };
+  attributes: {
+    body: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'default';
+        }
+      >;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SectionsBottomActions extends Struct.ComponentSchema {
   collectionName: 'components_slices_bottom_actions';
   info: {
@@ -212,6 +246,17 @@ export interface SectionsBottomActions extends Struct.ComponentSchema {
   };
   attributes: {
     buttons: Schema.Attribute.Component<'links.button-link', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionsFaq extends Struct.ComponentSchema {
+  collectionName: 'components_sections_faqs';
+  info: {
+    displayName: 'FAQ';
+  };
+  attributes: {
+    items: Schema.Attribute.Component<'elements.faq-item', true>;
     title: Schema.Attribute.String;
   };
 }
@@ -388,6 +433,7 @@ export interface SharedRedirect extends Struct.ComponentSchema {
 export interface SharedSeo extends Struct.ComponentSchema {
   collectionName: 'components_shared_seos';
   info: {
+    description: '';
     displayName: 'seo';
     icon: 'search';
   };
@@ -397,15 +443,15 @@ export interface SharedSeo extends Struct.ComponentSchema {
     metaDescription: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-        minLength: 50;
+        maxLength: 200;
+        minLength: 40;
       }>;
     metaImage: Schema.Attribute.Media<'images'>;
     metaRobots: Schema.Attribute.String;
     metaTitle: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 60;
+        maxLength: 100;
       }>;
     metaViewport: Schema.Attribute.String;
     openGraph: Schema.Attribute.Component<'shared.open-graph', false>;
@@ -444,6 +490,7 @@ export interface SharedSocialNetwork extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'elements.faq-item': ElementsFaqItem;
       'elements.feature': ElementsFeature;
       'elements.feature-column': ElementsFeatureColumn;
       'elements.feature-row': ElementsFeatureRow;
@@ -458,7 +505,9 @@ declare module '@strapi/strapi' {
       'links.button': LinksButton;
       'links.button-link': LinksButtonLink;
       'links.link': LinksLink;
+      'sections.body-with-title': SectionsBodyWithTitle;
       'sections.bottom-actions': SectionsBottomActions;
+      'sections.faq': SectionsFaq;
       'sections.feature-columns-group': SectionsFeatureColumnsGroup;
       'sections.feature-rows-group': SectionsFeatureRowsGroup;
       'sections.hero': SectionsHero;

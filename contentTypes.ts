@@ -1,4 +1,10 @@
 
+export interface ElementsFaqItem {
+  id?: number;
+  question: string;
+  answer?: any;
+};
+
 export interface ElementsFeatureColumn {
   id?: number;
   title: string;
@@ -98,10 +104,22 @@ export interface LinksLink {
   text: string;
 };
 
+export interface SectionsBodyWithTitle {
+  id?: number;
+  title?: string;
+  body?: any;
+};
+
 export interface SectionsBottomActions {
   id?: number;
   title?: string;
   buttons?: LinksButtonLink[] | null;
+};
+
+export interface SectionsFaq {
+  id?: number;
+  title?: string;
+  items?: ElementsFaqItem[] | null;
 };
 
 export interface SectionsFeatureColumnsGroup {
