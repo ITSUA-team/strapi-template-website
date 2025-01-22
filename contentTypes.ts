@@ -186,8 +186,8 @@ export interface SectionsTestimonialsGroup {
 
 export interface SharedOpenGraph {
   id?: number;
-  ogTitle: string;
-  ogDescription: string;
+  ogTitle?: string;
+  ogDescription?: string;
   ogImage?: Media | null;
   ogUrl?: string;
   ogType?: string;
@@ -237,7 +237,7 @@ export interface Activity {
   site?: string;
   message?: string;
   by?: string;
-  currentStatus?: "success" | "error" | "unknown";
+  currentStatus?: "success" | "error" | "processing" | "unknown";
   logFile?: Media | null;
 };
 

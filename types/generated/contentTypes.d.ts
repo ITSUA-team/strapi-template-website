@@ -372,6 +372,7 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiActivityActivity extends Struct.CollectionTypeSchema {
   collectionName: 'activities';
   info: {
+    description: '';
     displayName: 'Activity';
     pluralName: 'activities';
     singularName: 'activity';
@@ -385,7 +386,7 @@ export interface ApiActivityActivity extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     currentStatus: Schema.Attribute.Enumeration<
-      ['success', 'error', 'unknown']
+      ['success', 'error', 'processing', 'unknown']
     >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -589,6 +590,8 @@ export interface ApiSitesPageSitesPage extends Struct.CollectionTypeSchema {
         'sections.feature-rows-group',
         'sections.feature-columns-group',
         'sections.bottom-actions',
+        'sections.faq',
+        'sections.body-with-title',
       ]
     > &
       Schema.Attribute.SetPluginOptions<{

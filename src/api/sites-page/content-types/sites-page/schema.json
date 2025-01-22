@@ -61,7 +61,9 @@
         "sections.hero",
         "sections.feature-rows-group",
         "sections.feature-columns-group",
-        "sections.bottom-actions"
+        "sections.bottom-actions",
+        "sections.faq",
+        "sections.body-with-title"
       ],
       "max": 20,
       "min": 1

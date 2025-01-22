@@ -9,13 +9,11 @@
   "attributes": {
     "ogTitle": {
       "type": "string",
-      "required": true,
-      "maxLength": 70
+      "required": false
     },
     "ogDescription": {
       "type": "string",
-      "maxLength": 200,
-      "required": true
+      "required": false
     },
     "ogImage": {
       "type": "media",
